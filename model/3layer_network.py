@@ -1,5 +1,13 @@
 import numpy as np
 
+# sigmoid function
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+# identity function, 항등함수 -> 회귀문제에 사용
+def identitiy_function(x):
+    return x
+
 # ANN
 def three_layer_network():
     network = {}
