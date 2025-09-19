@@ -9,7 +9,7 @@ import pickle
 import os
 import numpy as np
 
-url_base = 'http://yaan.lecun.com/exdb/mnist/'
+url_base = 'http://yann.lecun.com/exdb/mnist/'
 key_file = {
     'train_img':'train_images-idx3-ubyte.gz',
     'train_label':'train-labels-idx1-ubyte.gz',
