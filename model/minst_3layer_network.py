@@ -40,7 +40,7 @@ class ThreeLayerNet:
         y = np.argmax(y, axis= 1)
         t = np.argmax(t, axis= 1)
         
-        accuracy = np.sum(y==t) / float(len(x.shape[0]))
+        accuracy = np.sum(y==t) / float(x.shape[0])
         return accuracy
     
     def get_gradient(self, x, t):
