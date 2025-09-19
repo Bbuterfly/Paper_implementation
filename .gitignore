@@ -1,3 +1,4 @@
 .git
 .np
 test.*
+__pycache__
