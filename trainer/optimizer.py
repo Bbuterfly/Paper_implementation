@@ -1,7 +1,7 @@
 import numpy as np
 
 # 중앙 차분식 수치미분법 -> f'(x) = f(x+h) - f(x-h) / 2h
-def _numerical_gradient(f, x):
+def numerical_gradient(f, x):
     h = 1e-4
     grad = np.zeros_like(x)
     
@@ -23,7 +23,7 @@ def gradient_descent(f, init_x, lr=1e-2, step_num=100):
     x = init_x
     
     for i in range(step_num):
-        grad = _numerical_gradient(f, x)
+        grad = numerical_gradient(f, x)
         x -= lr * grad
         
     return x
