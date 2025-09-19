@@ -2,7 +2,7 @@ import numpy as np
 import sys, os
 import pickle
 sys.path.append(os.pardir)
-from dataset.mnist import load_minst
+from dataset.mnist import load_mnist
 from trainer.activation import sigmoid, softmax
 from trainer.loss import cross_entropy_error
 from trainer.optimizer import numerical_gradient, gradient_descent
@@ -26,8 +26,7 @@ class ThreeLayerNet:
         a2 = np.dot(z1, W2) + b2
         z2 = sigmoid(a2)
         a3 = np.dot(z2, W3) + b3
-        z3 = sigmoid(a3)
-        y = softmax(z3)
+        y = softmax(a3)
         
         return y
     
