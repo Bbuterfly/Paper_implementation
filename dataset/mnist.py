@@ -9,9 +9,9 @@ import pickle
 import os
 import numpy as np
 
-url_base = 'http://yann.lecun.com/exdb/mnist/'
+url_base = 'https://ossci-datasets.s3.amazonaws.com/mnist/'
 key_file = {
-    'train_img':'train_images-idx3-ubyte.gz',
+    'train_img':'train-images-idx3-ubyte.gz',
     'train_label':'train-labels-idx1-ubyte.gz',
     'test_img':'t10k-images-idx3-ubyte.gz',
     'test_label':'t10k-labels-idx1-ubyte.gz'
@@ -67,7 +67,7 @@ def _convert_numpy():
     dataset = {}
     dataset['train_img'] = _load_img(key_file['train_img'])
     dataset['train_label'] = _load_label(key_file['train_label'])
-    dataset['test_img'] = _load_label(key_file['test_img'])
+    dataset['test_img'] = _load_img(key_file['test_img'])
     dataset['test_label'] = _load_label(key_file['test_label'])
     
     return dataset
