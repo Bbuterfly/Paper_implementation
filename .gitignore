@@ -3,5 +3,5 @@
 test.*
 __pycache__
 *.pkl
-t10k*
-train*
+t10k-*
+train-*
