@@ -16,6 +16,21 @@ class Relu:
         dx = dout
         
         return dx
+    
+class Sigmoid:
+    def __init__(self):
+        self.out = None
+        
+    def forward(self, x):
+        out = 1 / (1 + np.exp(-x))
+        self.out = out
+        
+        return out
+    
+    def backward(self, dout):
+        dx = dout * (1 - self.out) * self.out
+        return dx
+
 # regression task -> identity function, classification -> softmax function
 def softmax(x):
     c = np.max(x) # 오버플로우 방지, 일반적으로 입력 신호의 최댓값 사용
@@ -24,6 +39,3 @@ def softmax(x):
     y = exp_x / sum_exp_x
     
     return y
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
