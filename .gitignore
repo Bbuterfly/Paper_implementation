@@ -1,2 +1,7 @@
 .git
 .np
+test.*
+__pycache__
+*.pkl
+t10k-*
+train-*
